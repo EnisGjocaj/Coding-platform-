@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+
+{% block title %}Add Post{% endblock %}
+
+{% block content %}
+    <h1 class="my-2 mb-12 font-semibold text-3xl">Add a new blog post</h1>
+    <form action="." method="POST">
+        {% csrf_token %}
+
+        <div class="space-y-4">
+            {{ form.as_p }}
+        </div>
+
+        {% if form.errors or form.non_field_errors %}
+			<div class="mb-3 p-6 bg-red-100 rounded-xl">
+				{% for field in forms %}
+					{{ field.errors }}
+				{% endfor %}
+
+				{{ form.non_field_errors }}
+			</div>
+		{% endif %}
+        
+        <button type="submit" class="cursor-pointer outline-none border-none rounded-xl p-3 bg-blue-500 font-semibold transition-all duration-300 ease-in-out hover:bg-blue-300 focus:bg-blue-300">Add Post</button>
+    </form>
+{% endblock %}

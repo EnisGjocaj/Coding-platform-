@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+
+{% block title %} Post {% endblock %}
+
+{% block content %}
+	<div class="bg-gray-800 rounded-xl p-6 w-3/4">
+		<div class="col-md-8 mt-3 left">
+				<div class="mb-4">
+					<div>
+						<h2 class="mb-2 text-2xl font-semibold">{{ object.title }}</h2>
+						<p class="mb-4 text-md font-thin text-gray-600">{{ post.author }} | {{ post.created_at }}</p>
+						<p class="mb-8 text-lg font-thin text-gray-400">{{ object.content|safe }}</p>	
+					</div>
+				</div>
+		</div>
+	</div>
+{% endblock %}

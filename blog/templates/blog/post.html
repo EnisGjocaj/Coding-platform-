@@ -1,0 +1,25 @@
+{% extends "core/base.html" %}
+
+{% block title %}Blog | Main{% endblock %}
+
+{% block content %}
+	<div>
+		<div class="col-md-8 mt-6 left">
+			{% for post in post_list %}
+				<div class="bg-gray-800 rounded-xl p-7 w-3/4 mb-6">
+					<div>
+						<h2 class="mb-2 text-2xl font-semibold">{{ post.title }}</h2>
+						<p class="mb-4 text-md font-thin text-gray-600">{{ post.author }} | {{ post.created_at }}</p>
+						<p class="mb-8 text-lg font-thin text-gray-400">{{ post.content|slice:":200" }}</p>	
+						<div class="flex items-center justify-between">
+							<a class="cursor-pointer outline-none border-none rounded-xl p-3 bg-blue-500 font-semibold transition-all duration-300 ease-in-out hover:bg-blue-300 focus:bg-blue-300" href="{% url 'blog:detail' slug=post.slug %}">Read More</a>
+							{% if request.user == post.author %}
+								<a class="cursor-pointer outline-none border-none rounded-xl p-3 bg-red-500 font-semibold transition-all duration-300 ease-in-out hover:bg-red-300 focus:bg-red-300" href="{% url 'blog:delete' post.id %}">Delete</a>
+							{% endif %}
+						</div>	
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
