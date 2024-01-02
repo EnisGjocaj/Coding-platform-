@@ -1,0 +1,28 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Add Post{% endblock %}
+
+{% block content %}
+    <div class="p-4 sm:ml-64 flex flex-col justify-center items-center">
+        <h1 class="my-2 mb-12 font-semibold text-3xl">Add a new blog post</h1>
+        <form action="." method="POST" class="w-3/4">
+            {% csrf_token %}
+
+            <div class="space-y-4">
+                {{ form.as_p }}
+            </div>
+
+            {% if form.errors or form.non_field_errors %}
+                <div class="mb-3 p-6 bg-red-100 rounded-xl">
+                    {% for field in forms %}
+                        {{ field.errors }}
+                    {% endfor %}
+
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+            
+            <button type="submit" class="mt-4 inline-block text-white font-bold py-2 px-4 rounded-full bg-gradient-to-r from-pink-500 to-purple-800 border border-transparent transform hover:scale-110 hover:border-white transition-transform duration-3000 ease-in-out">Add Post</button>
+        </form>
+    </div>
+{% endblock %}

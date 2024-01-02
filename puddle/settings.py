@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'blog',
     'courses',
     'pro',
+    'dashboard',
+    'challenges',
 ]
 
 MIDDLEWARE = [

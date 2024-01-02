@@ -1,0 +1,30 @@
+{% extends "core/base.html" %}
+
+{% block title %}Quiz{% endblock %}
+
+{% block content %}
+<div class="flex flex-col justify-center items-center px-6 py-6 my-6 mx-4 max-[375px]:w-full max-[375px]:mx-2">
+
+    <form method="post" action="{% url 'challenges:quiz_detail' quiz.id %}">
+      {% csrf_token %}
+      {% for question in questions %}
+        <div class="my-8">
+            <fieldset>
+              <legend class="text-4xl my-4 mb-6 max-[768px]:text-3xl max-[426px]:text-xl max-[321px]:text-sm">{{ question.text }}</legend>
+    
+              <div class="bg-gray-800 rounded-lg px-8 py-6 max-[426px]:px-4 max-[375px]:w-full">
+                  {% for answer in question.answer_set.all %}
+                  <label class="my-4 text-lg max-[426px]:text-sm max-[321px]:text-xs">
+                    <input type="radio" name="question_{{ question.id }}" value="{{ answer.id }}">
+                    {{ answer.text }}
+                  </label><br>
+                {% endfor %}
+              </div>
+            </fieldset>
+        </div>
+      {% endfor %}
+      <!-- <input type="submit" value="Submit Quiz"> -->
+      <button type="submit" class="px-8 py-3 text-emerald-700 rounded bg-emerald-100 mt-8 my-4 cursor-pointer transition transition-all duration-300 ease-in-out hover:bg-emerald-300"><span class="animate-pulse">Submit Quiz</span></button>
+    </form>
+</div>
+{% endblock %}

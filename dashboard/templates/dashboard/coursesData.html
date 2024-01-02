@@ -1,0 +1,56 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Courses Data{% endblock %}
+
+{% block content %}
+<div class="p-4 sm:ml-64 flex flex-col justify-center items-center">
+    <div>
+        <h1 class="text-3xl my-2 font-semibold italic mb-14">Data model for the Courses Data Model</h1>
+        
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <caption class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                Courses Data
+                <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Courses Data avaliable and saved.</p>
+            </caption>
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Course name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Course category
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Course image
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Course content
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in courses_data %}
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            {{ item.name }}
+                        </th>
+                        <td class="px-6 py-4">
+                            {{ item.category }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ item.image }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ item.content }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    </div>
+</div>
+{% endblock %}

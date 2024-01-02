@@ -5,12 +5,12 @@
 {% block content %}
 <div class="mt-12 py-6 px-6 flex flex-col justify-center items-center">
 	<h1 class="my-2 text-3xl font-semibold text-white">COURSES</h1>
-	<p class="text-sm text-gray-500 font-thin mb-12">Mesoni programimin me kurse te vecanta live.</p>
+	<p class="text-sm text-gray-500 font-thin mb-12 max-[320px]:text-center">Mesoni programimin me kurse te vecanta live.</p>
 	<div class="w-24 bg-gray-500 rounded-xl h-1"></div>
 </div>
 
-<div class="col-span-3">
-	<div class="grid grid-cols-4 gap-4">
+<div class="col-span-3 px-8 py-8 max-[320px]:my-8 max-[320px]:mb-12">
+	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 	{% for course in courses %}
 		<div class="hover:transform hover:scale-105 transition-transform">
 			<a class="#">
@@ -18,7 +18,7 @@
 					<img src="{{ course.image.url}}" class="rounded-t-xl image-fit" />
 				</div>
 
-				<div class="p-6 bg-gray-800 rounded-b-xl">
+				<div class="p-6 bg-gray-800 rounded-b-xl max-[1024px]:p-4">
 					<h2 class="text-xl my-2">{{ course.name }}</h2>
 					<p class="my-4 text-gray-500 text-sm">{{ course.content }}</p>
 

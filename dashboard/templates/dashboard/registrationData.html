@@ -1,0 +1,80 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Registration Data{% endblock %}
+
+{% block content %}
+<div class="p-4 sm:ml-64 flex flex-col justify-center items-center">
+    <div>
+        <h1 class="text-3xl my-2 font-semibold italic mb-14">Data model for the Registration Data Model</h1>
+        
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <caption class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                Registration Data
+                <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Registration Data avaliable and saved.</p>
+            </caption>
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        User
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Full name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Age
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Email
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Phone number
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Student interests
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        From where
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        User Bio
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in registration_data %}
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            {{ item.user }}
+                        </th>
+                        <td class="px-6 py-4">
+                            {{ item.full_name }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ item.age }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ item.email }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ item.phone_number }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ item.students_interst }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ item.from_where }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ item.user_bio }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    </div>
+</div>
+{% endblock %}

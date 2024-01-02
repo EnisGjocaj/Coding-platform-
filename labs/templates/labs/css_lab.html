@@ -1,0 +1,64 @@
+{% extends 'labs/lab_detail.html' %}
+
+{% block additional_content %}
+    <p>Special Features Type 1: {{ lab.labs_type.lab_type }}</p>
+    {% block additional_html %}
+        <img class="w-1/2 my-2 max-[768px]:w-11/12" src="{{ lab.image.url }}" alt="HTML image"/>
+        <div class="my-6">
+            <div class="flex flex-col justify-start">
+                <div class="py-2 border-b-4 border-dashed border-gray-600 self-start">
+                    <h1 class="text-3xl my-2 font-bold text-white">Fillimi</h1>
+                </div>
+                <h1 class="text-2xl my-8 font-bold text-gray-500">Integrimi i CSS në HTML</h1>
+                <div>
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Ekzistojnë <span class="text-blue-600 animate-pulse">tre</span> mënyra për integrimin e CSS në HTML dhe dizajnimin e tij.</p> 
+                    <p class="text-[#d1d5db] max-[426px]:text-sm">Mënyrat për stilizimin e fajllit të HTML me anë të CSS janë këto: <span class="text-blue-600 animate-pulse">1. Inline styling(stilizimi në rresht)</span>, <span class="text-blue-600 animate-pulse">2. Internal styling(stilizimi brenda)</span> dhe <span class="text-blue-600 animate-pulse">3. External CSS(stilizimi jashtë)</span> </p>
+                    <img class="my-4 w-3/4 max-[768px]:w-11/12 max-[426px]:w-full" src="/media/app_images/htmlpic1.png" alt="html picture" />
+                </div>
+                <h1 class="text-xl my-8 font-bold text-gray-500">Inline Styling</h1>
+                <div>
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Inline styling (stilizimi në rresht) nënkupton stilizimin e përfshirë dhe vendosur në rresht të HTML tag, në mënyrë direkte, duke e përdorur  <span class="text-blue-600 animate-pulse">atributin <strong>style</strong></span></p> 
+                    <p class="text-[#d1d5db] mb-2 max-[426px]:text-sm">Për të treguar këtë mënyrë të stilizimit , ne do stilizojmë një paragraf , dhe kjo bëhet si në figurë:</p>
+                    <img class="my-4 w-3/4 max-[768px]:w-11/12 max-[426px]:w-full" src="/media/app_images/css1.png" alt="css 1 picture" />
+                    <!--Test Code START-->
+                    <!--Test code END-->
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Siç shihet ne kemi përdorur atributin style me anë të të cilit është bërë stilizimi i paragrafit.</p>
+                    <p class="text-[#d1d5db] max-[426px]:text-sm"> Në kodin në figurë shohim se ne kemi definuar disa stile të ndryshme,  <span class="text-blue-600 animate-pulse">ngjyrën (color )</span> dhe <span class="text-blue-600 animate-pulse">madhësinë e tekstit ( font-size )</span></p>
+                    <p class="text-[#d1d5db] max-[426px]:text-sm">Gjatë punës me CSS ne do i njohim dhe përdorim këto çifte <span class="text-blue-600 animate-pulse">vetish e vlerash</span>ku në rastin tonë për veti kemi ngjyrën ose madhësinë e teksit, e për vlerë kemi ngjyrën e kuqe , apo 30px.</p> 
+                </div>
+            </div>
+
+            <h1 class="text-xl my-8 font-bold text-gray-500">Internal Styling</h1>
+                <div>
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Internal styling (stilizimi i brendshëm) është stilizim i cili bëhet brenda fajllit të HTML, por në këtë rasr në një pjesë të <span class="text-blue-600 animate-pulse">veçantë të ndarë nga përmbajtja.</span></p> 
+                    <p class="text-[#d1d5db] mb-2 max-[426px]:text-sm">Për të treguar këtë mënyrë të stilizimit , ne do stilizojmë një paragraf , dhe kjo bëhet si në figurë:</p>
+                    <img class="my-4 w-3/4 max-[768px]:w-11/12 max-[426px]:w-full" src="/media/app_images/css2.png" alt="css 2 picture" />
+                    <p class="text-[#d1d5db] mt-8">Etiketa <code class="bg-gray-800 text-white p-1 rounded font-mono text-lg my-4 ">
+                        &lt;style&gt;&lt;/style&gt;
+                    </code> është etiketë e cila vendoset në etiketën <span class="text-blue-600 animate-pulse">head</span> dhe përmban stilet e CSS të cilat integrohen në elementin e zgjedhur</p> 
+
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Struktura e kësaj mënyre të stilizimit është se ajo fillon me <span class="text-blue-600 animate-pulse">selektorin(i cili në rastin tonë është p)</span>  dhe pastaj me kllapat , brenda të cilave shkruhen stilet</p> 
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Selektori mund të jetë vetë emri i etiketës, si në rastin tonë, mirëpo kjo do do zgjedhë për stilizim të gjitha paragrafet në faqe. Nëse dëshirojmë të zgjedhim grupe të veçanta të elementeve, atëherë do përdorim <span class="text-blue-600 animate-pulse">klasat dhe ID-të</span> sikur në shembullin në vijim</p> 
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Vini re se në këtë pjesë kemi vendosur disa veti dhe vlera të reja, shikoni në foto!</p> 
+
+                </div>
+                
+            <h1 class="text-xl my-8 font-bold text-gray-500">External Styling</h1>
+
+                <div>
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">External styling (stilizimi i jashtëm) është stilizim i cili përmban një file <span class="text-blue-600 animate-pulse">të veçantë të CSS</span> fajll i cili përdoret vetëm për përmbajtjen e stilizimit CSS.</p> 
+                    <p class="text-[#d1d5db] mb-2 max-[426px]:text-sm">Për të treguar këtë mënyrë të stilizimit , ne do stilizojmë një paragraf , dhe kjo bëhet si në figurë:</p>
+                    <img class="my-4 w-3/4 max-[768px]:w-11/12 max-[426px]:w-full" src="/media/app_images/css3.png" alt="css 3 picture" />
+                    <p class="text-[#d1d5db] mt-8 max-[426px]:text-sm"> Duhet të përmendim se ky fajll i ri i krijuar duhet të ketë  <span class="text-blue-600 animate-pulse">mbaresën .css</span> dhe duhet të lidhet me file HTML me anë të një etikete të re <span class="text-blue-600 animate-pulse">link tag</span></p> 
+
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Kjo etiketë vendoset në pjesën head të programit dhe e drejton html te fajlli i kërkuar <span class="text-blue-600 animate-pulse">duke i lidhur mes vete.</span></p> 
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Nga kodi mund të shihni se ne kemi vendosur dy atribute të reja <span class="text-blue-600 animate-pulse">klasat dhe ID-të</span> të cilat vendosen te një element për ti veçuar stilet tek ai element i veçantë.</p> 
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Duhet të mbani mend se një element mund të ketë vetëm një ID , por mund të ketë më shumë klasa.</p> 
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Në fajllin e CSS , për ta zgjedhur elementin e ID-së , përdorim # para emrit të dhënë, kurse për të selektuar klasën e vendosim një pikë .</p> 
+
+                    <img class="my-4 w-3/4 max-[768px]:w-11/12 max-[426px]:w-full" src="/media/app_images/css33.png" alt="css 3 picture" />
+                </div>
+            
+        </div>
+    {% endblock %}
+{% endblock %}

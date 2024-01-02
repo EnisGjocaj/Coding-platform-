@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ lab.name }} | Puddle{% endblock %}
+
+{% block content %}
+<div>
+    <div class="flex flex-row gap-6">
+        <div class="py-6 px-6 w-3/4 max-[426px]:w-full">
+            <h1 class="text-4xl font-bold my-4 text-gradient max-[1025px]:text-3xl">{{ lab.name }}</h1>
+            <p class="text-[#d1d5db] my-4 max-[1025px]:text-sm ">{{ lab.content }}</p>
+        
+            {% block additional_html %}{% endblock %}
+        
+        </div>
+    
+        <div id="minimap-container" class="fixed right-0 flex flex-col gap-6 px-4 py-4 text-gray-500 font-semibold mx-2 my-8 max-[768px]:mx-0 max-[768px]:gap-2 max-[700px]:hidden">
+           
+        </div>
+    </div>
+
+    <div class="flex justify-start items-start">
+        <div class="my-8 px-6 py-6 flex flex-row justify-center items-center">
+            <img id="like-icon" class="w-14 cursor-pointer" src="/media/app_images/heart1.png" alt="Like image" onclick="likeLab('{{ lab.id }}')"/>
+
+            <span id="like-count">{{ lab.likes.count }}</span> 
+        </div>
+    </div>
+
+    <div class="my-8 mt-24 px-6 py-6 flex flex-row justify-evenly items-center w-3/4 max-[376px]:w-full max-[376px]:px-2">
+        <button style="font-family: 'Roboto Condensed', sans-serif;" class="whitespace-nowrap font-bold text-md p-2.5 cursor-pointer outline-none border-none text-white bg-green-500 transition-all duration-200 ease-in-out hover:bg-green-700 focus:bg-teal-700 max-[376px]:p-2 max-[376px]:text-sm">
+            <a href="{% url 'core:register' %}">MËSO MË SHUMË</a>
+        </button>
+        <button style="font-family: 'Roboto Condensed', sans-serif;" class="font-bold text-md p-2.5 cursor-pointer outline-none border-none text-white bg-green-500 transition-all duration-200 ease-in-out hover:bg-green-700 focus:bg-teal-700 max-[376px]:p-2 max-[376px]:text-sm">
+            <a href="{% url 'challenges:quiz_detail' quiz_id=lab.quiz.id %}">USHTRIM</a>
+        </button>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Users{% endblock %}
+
+{% block content %}
+<div class="p-4 sm:ml-64 flex flex-col justify-center items-center">
+    <div class="w-full">
+        <h1 class="text-center text-3xl my-2 font-semibold italic mb-14 max-[375px]:text-xl max-[375px]:text-center">Users on this site</h1>
+        <!-- <ul>
+            {% for item in airline_data %}
+                <li class="text-lg my-2 font-semibold text-gray-800">{{ item.name }} - {{ item.departure }} - {{ item.destination }} - {{ item.departDate }} - {{ item.returnDate }} - {{ item.price }}$ </li>
+            {% endfor %}
+        </ul> -->
+        
+        <div class="w-full relative overflow-x-auto shadow-md sm:rounded-lg">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <caption class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800 max-[376px]:p-1">
+                    Users
+                    <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">All the accounts created on this site</p>
+                </caption>
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 max-[376px]:px-2 max-[376px]:py-1">
+                            User name
+                        </th>
+                        <th scope="col" class="px-6 py-3 max-[376px]:px-2 max-[376px]:py-1">
+                            Email
+                        </th>
+                        <th scope="col" class="px-6 py-3 max-[376px]:px-2 max-[376px]:py-1">
+                            Is Agent
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in users %}
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white max-[376px]:px-2 max-[376px]:py-1">
+                                {{ item.username }}
+                            </th>
+                            <td class="px-6 py-4 max-[376px]:px-2 max-[376px]:py-1">
+                                {{ item.email }}
+                            </td>
+                            <td class="px-6 py-4 max-[376px]:px-2 max-[376px]:py-1">
+                                {{ item.userprofile.is_agent }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

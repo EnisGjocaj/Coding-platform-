@@ -1,0 +1,18 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}New Category Form{% endblock %}
+
+{% block content %}
+<div class="my-8 p-4 sm:ml-64 flex flex-col justify-center items-center">
+    <h1 class="text-3xl my-2 font-semibold italic mb-14">Category Form</h1>
+    <div class="w-1/2">
+        <form class="w-full" action="." method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="inline-block text-white font-bold py-2 px-4 rounded-full bg-gradient-to-r from-pink-500 to-purple-800 border border-transparent transform hover:scale-110 hover:border-white transition-transform duration-3000 ease-in-out">Submit form</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

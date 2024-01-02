@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+
+{% block title %} Your score {% endblock %}
+
+{% block content %}
+<div>
+    <div class="flex flex-col justify-center items-center px-6 py-6 my-4 ">
+        <div>
+           <h1 class="text-4xl font-semibold text-slate-200">Your score for the quiz</h1> 
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="flex flex-col justify-center items-center w-full bg-green-200 p-4 my-4 rounded-md max-[426px]:p-6 max-[426px]:mt-8 max-[426px]:text-center">
+        <h1 class="text-emerald-600 text-6xl font-bold my-8 max-[321px]:text-5xl">Faleminderit për përgjigjet e juaja.</h1>
+        <p class="text-emerald-400 text-xl font-semibold my-8 max-[321px]:text-lg">You scored <span class="text-emerald-600 animate-pulse">{{ score }} of {{ total_questions }} questions.</span></p>
+        <a href="{% url 'labs:labs' %}" class="my-2 mb-8 outline-none border-none text-lg px-6 py-2 font-semibold text-white bg-teal-500 rounded-lg transition-all duration-300 ease-in-out hover:bg-teal-700">
+            Go Back
+        </a>
+    </div>
+</div>
+{% endblock %}

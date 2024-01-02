@@ -1,0 +1,42 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Category Post Data{% endblock %}
+
+{% block content %}
+<div class="p-4 sm:ml-64 flex flex-col justify-center items-center"> 
+    <h1 class="text-3xl my-2 font-semibold italic mb-14">Data model for all the Category Data</h1>
+
+    <div class="w-3/4 relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <caption class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                Category Data
+                <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">All the category data published on the site from the admin or the agent.</p>
+            </caption>
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Section
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Categories
+                    </th>
+                </tr>
+            </thead>
+            {% if category_course_data %}
+                <tbody>
+                    {% for item in category_course_data %}
+                        <tr class="text-gray-900 bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                COURSE
+                            </th>
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ item.name }}
+                            </th>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            {% endif %}
+        </table>
+    </div>
+</div>
+{% endblock %}

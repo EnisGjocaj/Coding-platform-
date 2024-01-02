@@ -1,0 +1,89 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Main{% endblock %}
+
+{% block content %}
+<!-- <div class="2xl:container p-4 sm:ml-64 "> -->
+<div class="p-4 sm:ml-64 flex flex-col justify-center items-center">
+    
+    <div class="mt-8 sm:ml-64 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6">
+        
+        <a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Number of all registered users:</h5>
+            <p class="text-xl font-normal text-gray-700 dark:text-gray-400">There are : <strong class="text-3xl font-bold text-black">{{ total_users }}</strong> registrated users on the site.</p>
+        </a>
+
+        
+        <a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Number of the registered users from last month:</h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400">There are : <strong class="text-3xl font-bold text-black">{{ total_users_last_month }}</strong> registrated users on the site from the last month.</p>
+        </a>
+    
+    </div>
+
+    <div class="w-full mt-12 bg-cover bg-center h-auto rounded-xl" style="background-image: url(https://images.unsplash.com/photo-1529074963764-98f45c47344b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBsYW5lfGVufDB8fDB8fHww);">
+        <div class="rounded-xl flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50 px-6 py-8">
+            <div class="text-center">
+                <h1 class="text-white text-3xl font-semibold">Number of visitors on the site: <span class="text-white font-bold">{{ visitor_count }}</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-8 sm:ml-64 flex flex-col justify-center w-full">
+        <h1 class="text-gray-700 font-semibold text-2xl my-4">Best scores for the labs:</h1>
+
+        <div class="flex flex-col w-3/4">
+            <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+              <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                  <table class="min-w-full">
+                    <thead class="bg-white border-b">
+                      <tr>
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                          #
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                          Score
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                          Lab
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                          User
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                            Attempts
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% if top_lab_scores %}
+                      {% endif %}
+                        {% for item in  top_lab_scores %}
+                            <tr class="bg-gray-100 border-b">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ flight.rank }}</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{ item.score }}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                  {{ item.quiz }}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                  {{ item.user }}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                  {{ item.attempts }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+</div>
+
+{% endblock %}

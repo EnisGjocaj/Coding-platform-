@@ -3,8 +3,9 @@
 {% block title %}Blog | Main{% endblock %}
 
 {% block content %}
-	<div>
-		<div class="col-md-8 mt-6 left">
+	<div class="flex flex-row ">
+
+		<div class="col-md-8 mt-6 left grow">
 			{% for post in post_list %}
 				<div class="bg-gray-800 rounded-xl p-7 w-3/4 mb-6">
 					<div>
@@ -21,5 +22,12 @@
 				</div>
 			{% endfor %}
 		</div>
+
+		<div class="flex-none">
+			<button class="rounded-xl outline-none border-none bg-blue-500 text-white font-semibold px-4 py-2 transition-all duration-300 ease-in-out hover:bg-blue-700 focus:bg-blue-700">
+				<a href="{% url 'blog:add' %}">Add a new post +</a>		
+			</button>
+		</div>
+
 	</div>
 {% endblock %}

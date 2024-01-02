@@ -1,0 +1,131 @@
+{% extends 'labs/lab_detail.html' %}
+
+{% block additional_content %}
+    <p>Special Features Type 1: {{ lab.labs_type.lab_type }}</p>
+    {% block additional_html %}
+        <img class="w-1/2 my-2 max-[426px]:w-full max-[426px]:my-6" src="{{ lab.image.url }}" alt="HTML image"/>
+        <div class="my-6">
+            <div class="flex flex-col justify-start">
+                <div class="py-2 border-b-4 border-dashed border-gray-600 self-start">
+                    <h1 class="text-3xl my-2 font-bold text-white">Fillimi</h1>
+                </div>
+                <h1 class="text-2xl my-8 font-bold text-gray-500">Krijimi i një fajlli HTML</h1>
+                <div class="max-[426px]:text-sm">
+                    <p class="text-[#d1d5db] mt-2">Për të filluar punën në HTML fillimish duhet të krijojmë një file me mbaresën ( extension ) <span class="text-blue-600 animate-pulse">.html</span>; </p> 
+                    <p class="text-[#d1d5db]">Hapeni editorin tuaj të tekstit dhe menjëherë krijojeni një fajll të ri, ju mund ta ruani atë në një folder sipas dëshirës.</p>
+                    <img class="my-4 w-3/4 max-[426px]:w-full" src="/media/app_images/htmlpic1.png" alt="html picture" />
+                </div>
+                <h1 class="text-2xl my-8 font-bold text-gray-500">Struktura e HTML</h1>
+                <div class="max-[426px]:text-sm">
+                    <p class="text-[#d1d5db] mt-2">HTML ka një strukturë e cila ndiqet gjatë krijimit të webfaqeve me të. Në <span class="text-blue-600 animate-pulse">HTML</span> i gjithë kodi organizohet me anë të llojeve të ndryshme të etiketave, për të cilat do flasim tani. </p> 
+                    <p class="text-[#d1d5db] mb-2">Struktura themelore e çdo programi në HTML duket kështu:</p>
+                    <!-- <img class="my-4 w-3/4" src="/media/app_images/htmlStructure2.png" alt="html picture" /> -->
+                    <!--Test Code START-->
+                    <pre class="border-2 border-slate-200 bg-gray-800 text-white p-2 rounded font-mono overflow-x-auto w-3/4 max-[1025px]:w-11/12">
+                        <code class="language-html">
+                          &lt;!DOCTYPE html&gt;
+                          &lt;html lang="en"&gt;
+                          &lt;head&gt;
+                            &lt;meta charset="UTF-8"&gt;
+                            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                            &lt;title&gt;Your Page Title&lt;/title&gt;
+                          &lt;/head&gt;
+                          &lt;body&gt;
+
+                          &lt;/body&gt;
+                          &lt;/html&gt;
+                        </code>
+                      </pre>
+                    
+                    <!--Test code END-->
+                    <p class="text-[#d1d5db] mt-2">Tani shkurtimisht do njoftohemi me këto etiketa të HTML të cilat mund ti përdorni pastaj. Duhet të përmendim se në HTML kemi <strong class="text-blue-600 animate-pulse">dy</strong> dy lloje të etiketave: Etiketa të vetme, dhe etiketa në çift <span class="text-blue-600 animate-pulse">hapëse dhe mbyllëse.</span></p>
+                    <p class="text-[#d1d5db]">Në kodin më lartë kemi paraqitur strukturën më të thjeshtë të një programi në HTML. Kjo strukturë është struktureë e përbashkët për të gjitha programet e tjera në HTML. Në këtë pjesë do njihemi me <span class="text-blue-600 animate-pulse">7 etiketat themelore në HTML.</span></p>
+                    <p class="text-[#d1d5db]">Duhet të përmendim se struktura e një HTML dokumenti është e ngjajshme me atë të <span class="text-blue-600 animate-pulse">njeriut.</span>Sikur njerëzit, edhe dukumenti në HTML ka pjesën e kokës, trupit , të cilat pastaj degëzohen në pjesë tjera. Më poshtë njihuni me etiketat kryesore:</p> 
+                </div>
+            </div>
+
+            <h1 class="text-2xl my-8 font-bold text-gray-500">Etiketa për tipin e dokumentit:</h1>
+                <div>
+                    <!-- <pre class="border-2 border-slate-200 bg-gray-800 text-white p-1 rounded font-mono overflow-x-auto w-1/2">
+                        <code class="language-html">
+                          &lt;!DOCTYPE html&gt;
+                        </code>
+                    </pre> -->
+                    <code class="bg-gray-800 text-white p-4 rounded font-mono text-2xl my-2 max-[321px]:text-md max-[321px]:p-2">
+                        &lt;!DOCTYPE html&gt;
+                    </code>
+
+                    <p class="text-[#d1d5db] mt-8 max-[426px]:text-sm">Kjo etiketë është etiketë speciale, është etiketë <span class="text-blue-600 animate-pulse">e vetme, dhe quhet etiketa për tipin e dokumentit. </span></p> 
+
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Kjo etiketë përdoret pët ti treguar shfletuesit ( browserit ) të përdoruesit versionin apo tipin e dokumentit të HTML që ne e përdorim. Nuk është e domosdoshme të përdoret , por është një praktikë e mirë për ta vendosur atë në krye të programit.</p> 
+                </div>
+                
+
+                <h1 class="text-2xl my-8 font-bold text-gray-500">Etiketa html:</h1>
+                <div>
+                    <code class="bg-gray-800 text-white p-4 rounded font-mono text-2xl my-2 max-[426px]:p-1 max-[426px]:text-md max-[321px]:text-sm max-[321px]:p-2">
+                        &lt;html lang="en"&gt;&lt;/html&gt;
+                    </code>
+
+                    <p class="text-[#d1d5db] mt-8 max-[426px]:text-sm">Kjo etiketë është etiketa kryesore, brenda së cilës vendosen të gjitha etiketat tjera të programit. Është etiketë <span class="text-blue-600 animate-pulse">çift, sepse është hapëse dhe mbyllëse. </span></p> 
+
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Etiketat çift, janë etiketa hapëse-mbyllëse, pra janë çift i etiketave. Kjo nuk vlen vetëm për këtë etiketë por edhe për të gjitha etiketat tjera të tipit të njejtë. Dallimi mes etiketës mbyllëse ndaj asaj hapëse është se etiketa mbyllëse e ka shenjën / përpara emrit të saj. Etiketa e html ndryshe quhet <span class="text-blue-600 animate-pulse">etiketë prind</span> e programmit sepse brenda saj vendosen tël gjitha tl tjerat.</p> 
+                </div>
+
+
+                <h1 class="text-2xl my-8 font-bold text-gray-500">Etiketa head:</h1>
+                <div>
+                    <code class="bg-gray-800 text-white p-4 rounded font-mono text-2xl my-2 ">
+                        &lt;head&gt;&lt;/head&gt;
+                    </code>
+
+                    <p class="text-[#d1d5db] mt-8 max-[426px]:text-sm">Në këtë etiketë vendosen të gjitha etiketat e tjera dhe të dhënat që kanë të bëjnë me<span class="text-blue-600 animate-pulse"> konfigurimin dhe rregullimin e programit. </span></p> 
+
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Etiketa head është poashtu etiketë çift, dhe vendoset brenda etiketës html, pra etiketa html është  <span class="text-blue-600 animate-pulse">etiketë prind</span> e etiketës head.</p> 
+                </div>
+
+                <h1 class="text-2xl my-8 font-bold text-gray-500">Etiketat meta:</h1>
+                <div>
+                    <code class="bg-gray-800 text-white p-2 rounded font-mono text-xl my-2 max-[426px]:p-1 max-[426px]:text-sm">
+                            &lt;meta charset="UTF-8"&gt;
+                            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    </code>
+
+                    <p class="text-[#d1d5db] mt-8 max-[426px]:text-sm">Etiketat meta, të cilat janë etiketa të vetme, gjithmonë vendosen brenda etiketës head, dhe kanë të bëjnë me rregullimin e <span class="text-blue-600 animate-pulse"> konfigurimin dhe paraqitjen e të dhënave të nevojshme për faqen. </span></p> 
+
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Etiketat meta përdoren për të përcaktuar karakteret e të dhënave, për të përcaktuar fjalët kyq të faqes, emrin e autorit apo për ta bërë faqen e përshtatshme për responsivitet etj.</p> 
+                </div>
+
+                <h1 class="text-2xl my-8 font-bold text-gray-500">Etiketa title:</h1>
+                <div>
+                    <code class="bg-gray-800 text-white p-4 rounded font-mono text-2xl my-2 max-[321px]:text-sm max-[321px]:p-2">
+                        &lt;title&gt;&lt;/title&gt;
+                    </code>
+
+                    <p class="text-[#d1d5db] mt-8 max-[426px]:text-sm">Etiketa çift title është etiketë e cila poashtu vendoset në etiketen head, prandaj head është "prind i saj". </p> 
+
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Etiketa title përdoret për përcaktimin e titullit të dritares, e cila paraqitet në dritaren e shfletuesit.</p> 
+                </div>
+
+                <h1 class="text-2xl my-8 font-bold text-gray-500">Etiketa body:</h1>
+                <div>
+                    <code class="bg-gray-800 text-white p-4 rounded font-mono text-2xl my-2 ">
+                        &lt;body&gt;&lt;/body&gt;
+                    </code>
+
+                    <p class="text-[#d1d5db] mt-8 max-[426px]:text-sm">Etiketa body, njejtë sikur etiketa head, është etiketë çift e cila është në të njejtin rend me etiketën head, pra të dy këto etiketa shumë të rëndësishme janë brenda etiketës kryesore html.</p> 
+
+                    <p class="text-[#d1d5db] mt-2 max-[426px]:text-sm">Etiketa body është një etiketë <span class="text-blue-600 animate-pulse">shumë e rëndësishme</span>, e cila për dallim nga etiketa head e cila përmban të gjitha të dhënat e konfigurimit të webfaqes, kjo etiketë përmban <span class="text-blue-600 animate-pulse">gjithë përmbajtjen e faqes, pra vetë trupin e saj.</span></p> 
+                </div>
+        </div>
+
+        <!-- <div class="my-8 mt-24 px-6 py-6 flex flex-row justify-evenly items-center w-3/4">
+            <button style="font-family: 'Roboto Condensed', sans-serif;" class="font-bold text-md p-2.5 cursor-pointer outline-none border-none text-white bg-green-500 transition-all duration-200 ease-in-out hover:bg-green-700 focus:bg-teal-700">
+                <a href="{% url 'core:register' %}">MËSO MË SHUMË</a>
+            </button>
+            <button style="font-family: 'Roboto Condensed', sans-serif;" class="font-bold text-md p-2.5 cursor-pointer outline-none border-none text-white bg-green-500 transition-all duration-200 ease-in-out hover:bg-green-700 focus:bg-teal-700">
+                <a href="{% url 'challenges:quiz_detail' quiz_id=1 %}">USHTRIM</a>
+            </button>
+        </div> -->
+    {% endblock %}
+{% endblock %}
