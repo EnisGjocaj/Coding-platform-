@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4fz!o4yw895^cbw+9cvw@67ef@@-o5nd=5%o=otnro#6%ttyr%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -139,9 +139,14 @@ USE_TZ = True
 # settings.py
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+#test line of code below
+# STATIC_ROOT = '/path/to/your/static/root/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#end test
+
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, "static"),
+# )
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
