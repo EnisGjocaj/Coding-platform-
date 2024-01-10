@@ -84,7 +84,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'puddle.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -95,11 +94,12 @@ DATABASES = {
     }
 }
 
+DATABASES['default'] = dj_database_url.config(default='postgres://coursedb_6ylw_user:Lj6K2Ci4ylFmzdoBkoPedBF4fAai4Wre@dpg-cmfc3jla73kc73d0faeg-a.oregon-postgres.render.com/coursedb_6ylw', test_options={'NAME': 'courseDB'})
+
 # DATABASES = {
-#     'default':dj_database_url.parse(os.environ.get("DATABASE_URL")) 
+#     "default":dj_database_url.parse(os.environ.get("DATABASE_URL"))
     
 # }
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
