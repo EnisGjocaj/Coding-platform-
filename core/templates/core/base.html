@@ -177,11 +177,21 @@
 					border-left:25rem solid transparent;
 				}
 
-				.text-gradient {
+				/* .text-gradient {
 					background: -webkit-linear-gradient(#f97316, #eab308);
   					-webkit-background-clip: text;
   					-webkit-text-fill-color: transparent;
+				} */
+
+				.text-gradient {
+					background: -webkit-linear-gradient(#f97316, #eab308);
+					background: linear-gradient(#f97316, #eab308); /* Standard syntax */
+					-webkit-background-clip: text;
+					background-clip: text; /* Standard property */
+					-webkit-text-fill-color: transparent;/*
+					text-fill-color: transparent;  Standard property */
 				}
+
 
 		</style>
 

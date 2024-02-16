@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4fz!o4yw895^cbw+9cvw@67ef@@-o5nd=5%o=otnro#6%ttyr%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -94,7 +94,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.config(default='postgres://coursedb_6ylw_user:Lj6K2Ci4ylFmzdoBkoPedBF4fAai4Wre@dpg-cmfc3jla73kc73d0faeg-a.oregon-postgres.render.com/coursedb_6ylw', test_options={'NAME': 'courseDB'})
+#DATABASES['default'] = dj_database_url.config(default='postgres://coursedb_6ylw_user:Lj6K2Ci4ylFmzdoBkoPedBF4fAai4Wre@dpg-cmfc3jla73kc73d0faeg-a.oregon-postgres.render.com/coursedb_6ylw', test_options={'NAME': 'courseDB'})
 
 # DATABASES = {
 #     "default":dj_database_url.parse(os.environ.get("DATABASE_URL"))

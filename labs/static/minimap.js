@@ -3,11 +3,12 @@
 console.log("EnisGKJkljk")
 
 document.addEventListener('DOMContentLoaded', function () {
+    let minimapContainer;
     createMinimap();
 });
 
 function createMinimap() {
-    const minimapContainer = document.getElementById('minimap-container');
+     minimapContainer = document.getElementById('minimap-container');
     const h1Elements = document.querySelectorAll('h1');
 
     h1Elements.forEach((h1, index) => {
